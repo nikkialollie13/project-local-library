@@ -50,7 +50,7 @@ function getMostPopularBooks(books) {
 }
 
 function getMostPopularAuthors(books, authors) {
-const mostPopularAuthor = authors.map(author => {
+let mostPopularAuthor = authors.map(author => {
   const authorName = `${author.name.first} ${author.name.last}`;
   const booksBy = books.filter(book => book.authorId === author.id);
   const borrows = booksBy.reduce((total, book) => total + book.borrows.length, 0);
