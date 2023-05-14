@@ -9,15 +9,14 @@ function getTotalAccountsCount(accounts) {
 }
 
 function getBooksBorrowedCount(books) {
- let booksCheckedOut = books.reduce(
-  (acc, book) =>{
-    console.log("borrows", book.borrows)
+ return books.reduce((acc, book) =>{
+    //console.log("borrows", book.borrows)
    //book.borrows.filter((record) => record.returned === false).length > 0
 !book.borrows[0].returned ? acc++ : null
-  }
- );
+return acc
+ },0);
  console.log(("booksCheckedOut", booksCheckedOut))
- return booksCheckedOut;
+
 }
 
 function getMostCommonGenres(books) {
