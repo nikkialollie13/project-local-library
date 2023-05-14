@@ -15,12 +15,19 @@ function sortAccountsByLastName(accounts) {
 
 function getTotalNumberOfBorrows(account, books) {
  let totalBorrows = 0;
- for (let i = 0; i < books.length; i++) {
-  for (let j = 0; j < books[i].borrows.length; j++) {
-   if (account.id === books[i].borrows[j].id) {
-    totalBorrows += 1;
-   }
-  }
+  console.log("books", books)
+for (let id in books) {
+    console.log("id", books[id].borrows)
+    console.log("account.id", account.id)
+   let thing = books[id].borrows.filter((entry)=>entry.id === account.id).length 
+   console.log("thing", thing)
+   totalBorrows += thing;
+    //check if account id matches borrows id and increment total borrows
+  //for (let j = 0; j < books[i].borrows.length; j++) {
+//    if (account.id === books[i].borrows[j].id) {
+//     totalBorrows += 1;
+//    }
+//   }
  }
  return totalBorrows;
 }
