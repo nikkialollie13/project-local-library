@@ -1,7 +1,7 @@
 
 function findAccountById(accounts, id) {
- let foundId = accounts.find((account) => account.id === id);
- return foundId;
+ const found = accounts.find(account => account.id == id )
+ return found;
 }
 
 
@@ -31,6 +31,26 @@ for (let id in books) {
  }
  return totalBorrows;
 }
+
+// function that returns a _number_ representing the number of times the account's ID appears in any book's `borrows` array. 
+//function getTotalNumberOfBorrows(account, books) {
+  // create a variable for the id in account using destructuring
+    // const {
+        // id: accountId
+    // } = account;
+  // use the reduce method on books, to accumulate total bumber of borrows.
+    // return books.reduce((accumulator, book) => {
+  // callback function
+      // return (
+            // accumulator +
+            // book.borrows
+  // use filter method to create a new array that only includes borrows that have the same id as the account id 
+            // .filter(borrow => borrow.id === accountId)
+  // use the reduce method to add 1 for each item in the filtered array?
+            // .reduce((accumulatorBorrows, borrow) => accumulatorBorrows + 1, 0)
+       // );
+    // }, 0);
+// }
 
 
 function getBooksPossessedByAccount(account, books, authors) {
